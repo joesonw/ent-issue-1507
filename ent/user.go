@@ -10,7 +10,6 @@ import (
 	"strings"
 
 	"entgo.io/ent/dialect/sql"
-
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -64,7 +63,6 @@ func (u *User) assignValues(columns []string, values []interface{}) error {
 				u.Status = *value
 			}
 		case user.FieldInfo:
-
 			if value, ok := values[i].(*[]byte); !ok {
 				return fmt.Errorf("unexpected type %T for field Info", values[i])
 			} else if value != nil && len(*value) > 0 {
